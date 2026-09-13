@@ -1,66 +1,6 @@
-# Partie 11 — Gestion des erreurs {#partie-11}
-
-## 37. Error Handling {#chap-37}
-
-`Error`, `throw`, `throws`, `try`, `do`, `catch`.
-
-## 38. Gestion avancée {#chap-38}
-
-`try?`, `try!`, multiple catches, custom errors, propagation des erreurs.
-
-# Partie 12 — Mémoire {#partie-12}
-
-## 39. ARC {#chap-39}
-
-Automatic Reference Counting, strong references.
-
-## 40. Weak & Unowned {#chap-40}
-
-`weak`, `unowned`, quand les utiliser.
-
-## 41. Retain Cycles {#chap-41}
-
-Classes, closures, capture lists.
-
-# Partie 13 — Swift avancé {#partie-13}
-
-## 42. Access Control {#chap-42}
-
-`private`, `fileprivate`, `internal`, `public`, `open`, `package`.
-
-## 43. Type Casting {#chap-43}
-
-`is`, `as`, `as?`, `as!`.
-
-## 44. Opaque Types {#chap-44}
-
-`some`, pourquoi `some` existe.
-
-## 45. Existentials {#chap-45}
-
-`any`, protocol existentials, `some` vs `any`.
-
-## 46. Metatypes {#chap-46}
-
-`Type`, `self`, `Self`.
-
-## 47. Key Paths {#chap-47}
-
-`\Type.property`, KeyPath, WritableKeyPath, PartialKeyPath.
-
 # Projet 6 — 📦 Swift Package {#projet-6}
 
 Création d'une bibliothèque Swift réutilisable et publiable.
-
-# Partie 14 — Property Wrappers {#partie-14}
-
-## 48. Comprendre les Property Wrappers {#chap-48}
-
-Pourquoi ?, `@propertyWrapper`, `wrappedValue`.
-
-## 49. Property Wrappers avancés {#chap-49}
-
-`projectedValue`, `@Wrapper`, création de wrappers réutilisables.
 
 # Partie 15 — Result Builders {#partie-15}
 
