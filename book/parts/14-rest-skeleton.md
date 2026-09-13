@@ -1,39 +1,3 @@
-# Partie 6 — Structures et énumérations {#partie-6}
-
-## 19. Structures {#chap-19}
-
-Properties, methods, initializers, mutating methods, value semantics.
-
-## 20. Enums {#chap-20}
-
-Cases, associated values, raw values, methods, properties, pattern matching.
-
-## 21. Enums avancés {#chap-21}
-
-Enum récursifs, `indirect`, états avec enums, modeling avec enums.
-
-# Partie 7 — Classes et références {#partie-7}
-
-## 22. Classes {#chap-22}
-
-Création, properties, methods, initializers, reference semantics.
-
-## 23. Héritage {#chap-23}
-
-Parent / child classes, `override`, `super`, `final`.
-
-## 24. Initialisation {#chap-24}
-
-Default initializer, custom initializer, failable initializer, `required`, `convenience`, initialization inheritance.
-
-## 25. Value vs Reference {#chap-25}
-
-Struct → value semantics, Class → reference semantics, Enum → value semantics. Copying, mutations, références, copy-on-write.
-
-# Projet 4 — 💰 Expense Tracker {#projet-4}
-
-Modélisation avec struct/class/enum, calculs, catégorisation des dépenses.
-
 # Partie 8 — Properties {#partie-8}
 
 ## 26. Stored Properties {#chap-26}
