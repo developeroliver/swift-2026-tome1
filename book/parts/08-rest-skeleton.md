@@ -1,25 +1,3 @@
-# Partie 3 — Collections {#partie-3}
-
-## 9. Arrays {#chap-9}
-
-Création, accès, modification, suppression, parcours, `map`, `filter`, `reduce`, `compactMap`, `flatMap`, `sorted`, `contains`, `first`, `last`.
-
-## 10. Sets {#chap-10}
-
-Création, unicité, ajout/suppression, union, intersection, difference, recherche.
-
-## 11. Dictionaries {#chap-11}
-
-Clés / valeurs, création, modification, suppression, parcours, recherche, `mapValues`.
-
-## 12. Tuples {#chap-12}
-
-Création, décomposition, named tuples, quand les utiliser.
-
-# Projet 2 — 🧮 Calculatrice {#projet-2}
-
-Parsing d'expressions, opérateurs, gestion des cas limites avec les collections.
-
 # Partie 4 — Fonctions {#partie-4}
 
 ## 13. Fonctions {#chap-13}
