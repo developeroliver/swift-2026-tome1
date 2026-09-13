@@ -202,6 +202,14 @@ body {
 #TOC li {
   margin: 0.25em 0;
 }
+#TOC a::after {
+  content: leader(dotted) " " target-counter(attr(href), page);
+  color: #999;
+}
+#TOC > ul > li > a::after {
+  font-weight: 700;
+  color: #b3341f;
+}
 
 /* Headings */
 h1 {

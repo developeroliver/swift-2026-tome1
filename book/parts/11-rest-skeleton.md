@@ -1,35 +1,3 @@
-# Partie 4 — Fonctions {#partie-4}
-
-## 13. Fonctions {#chap-13}
-
-Déclaration, paramètres, retour, plusieurs paramètres, paramètres externes, `_`, valeurs par défaut.
-
-## 14. Fonctions avancées {#chap-14}
-
-Fonctions comme valeurs, fonctions retournant des fonctions, higher-order functions, `inout`, variadic parameters.
-
-## 15. Closures {#chap-15}
-
-Syntaxe, parameters, return values, trailing closures, shorthand arguments, capture de variables, `@escaping`, closures autocontenues.
-
-# Partie 5 — Optionnels {#partie-5}
-
-## 16. Comprendre les Optionnels {#chap-16}
-
-Pourquoi `Optional` ?, `nil`, `String?`, `Int?`.
-
-## 17. Manipuler les Optionnels {#chap-17}
-
-`if let`, `guard let`, optional chaining, `??`, `!`, `as?`.
-
-## 18. Optionnels avancés {#chap-18}
-
-Nested optionals, optional mapping, bonnes pratiques, éviter le force unwrap.
-
-# Projet 3 — ✅ Todo CLI {#projet-3}
-
-Application en ligne de commande avec persistance simple, optionnels, collections.
-
 # Partie 6 — Structures et énumérations {#partie-6}
 
 ## 19. Structures {#chap-19}
