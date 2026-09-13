@@ -1,0 +1,321 @@
+@page {
+  size: A4;
+  margin: 2.2cm 2cm 2.4cm 2cm;
+  @bottom-center {
+    content: counter(page);
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 9pt;
+    color: #888;
+  }
+}
+
+@page :first {
+  @bottom-center { content: none; }
+  margin: 0;
+}
+
+html {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11pt;
+  line-height: 1.55;
+  color: #1a1a1a;
+}
+
+body {
+  hyphens: auto;
+}
+
+/* Cover page */
+.cover {
+  page-break-after: always;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(160deg, #ff6a4d 0%, #f05138 40%, #c53a24 75%, #8f2716 100%);
+  color: white;
+  overflow: hidden;
+}
+.cover .glow-a {
+  position: absolute;
+  top: -110pt;
+  right: -140pt;
+  width: 380pt;
+  height: 380pt;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.28), rgba(255,255,255,0) 70%);
+}
+.cover .glow-b {
+  position: absolute;
+  bottom: -160pt;
+  left: -120pt;
+  width: 340pt;
+  height: 340pt;
+  border-radius: 50%;
+  background: radial-gradient(circle at 60% 40%, rgba(255,255,255,0.14), rgba(255,255,255,0) 70%);
+}
+.cover .art {
+  position: relative;
+  margin-top: 11%;
+  width: 62%;
+  box-shadow: 0 14pt 24pt rgba(0,0,0,0.35);
+  border-radius: 14pt;
+}
+.cover .kicker {
+  position: relative;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-size: 11pt;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  opacity: 0.85;
+  margin-top: 7%;
+}
+.cover h1 {
+  position: relative;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 64pt;
+  font-weight: 800;
+  margin: 0.15em 0 0 0;
+  line-height: 1.05;
+  color: white;
+  border: none;
+  padding: 0;
+  page-break-before: avoid;
+  letter-spacing: 0.03em;
+}
+.cover .subtitle {
+  position: relative;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 14.5pt;
+  font-weight: 300;
+  max-width: 24em;
+  margin-top: 0.7em;
+  opacity: 0.95;
+}
+.cover .tome {
+  position: relative;
+  margin-top: auto;
+  margin-bottom: 2.2em;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 12.5pt;
+  letter-spacing: 0.15em;
+  border: 1.5pt solid rgba(255,255,255,0.7);
+  padding: 0.5em 1.4em;
+  border-radius: 999px;
+}
+.cover .author {
+  position: relative;
+  margin-bottom: 0.9em;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 11pt;
+  opacity: 0.8;
+}
+
+/* Series roadmap page */
+.series-page {
+  page-break-after: always;
+}
+.series-page h2.series-heading {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 20pt;
+  color: #1a1a1a;
+  border: none;
+  padding: 0;
+  margin: 0 0 0.2em 0;
+}
+.series-page .series-lead {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 10.5pt;
+  color: #555;
+  margin-bottom: 1.8em;
+}
+.tome-card {
+  display: flex;
+  gap: 1em;
+  align-items: flex-start;
+  border: 1pt solid #e2e2e2;
+  border-left: 5pt solid #ccc;
+  border-radius: 6px;
+  padding: 1em 1.2em;
+  margin-bottom: 1em;
+  page-break-inside: avoid;
+}
+.tome-card.current {
+  border-left-color: #f05138;
+  background: #fff6f4;
+}
+.tome-card .tome-num {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 800;
+  font-size: 22pt;
+  color: #ccc;
+  min-width: 1.3em;
+}
+.tome-card.current .tome-num {
+  color: #f05138;
+}
+.tome-card h3 {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  margin: 0 0 0.15em 0;
+  font-size: 13pt;
+  color: #1a1a1a;
+}
+.tome-card p {
+  margin: 0.2em 0 0 0;
+  font-size: 9.8pt;
+  color: #444;
+  text-align: left;
+}
+.tome-card .tome-status {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 8pt;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #2e7d32;
+  font-weight: 700;
+}
+.tome-card.upcoming .tome-status {
+  color: #999;
+}
+
+/* Table of contents */
+#TOC {
+  page-break-after: always;
+}
+#TOC > ul {
+  list-style: none;
+  padding-left: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 10.5pt;
+}
+#TOC ul ul {
+  padding-left: 1.4em;
+  font-size: 9.7pt;
+}
+#TOC a {
+  text-decoration: none;
+  color: #1a1a1a;
+}
+#TOC li {
+  margin: 0.25em 0;
+}
+
+/* Headings */
+h1 {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 24pt;
+  color: #b3341f;
+  border-bottom: 2.5pt solid #f05138;
+  padding-bottom: 0.25em;
+  margin-top: 0;
+  page-break-before: always;
+}
+h1.part-title {
+  font-size: 30pt;
+  color: white;
+  background: #1a1a1a;
+  border: none;
+  padding: 1.4em 1em;
+  margin: -2.2cm -2cm 1.5em -2cm;
+  page-break-before: always;
+}
+h2 {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 15pt;
+  color: #b3341f;
+  margin-top: 1.6em;
+  border-left: 4pt solid #f05138;
+  padding-left: 0.5em;
+}
+h3 {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 12.5pt;
+  color: #1a1a1a;
+  margin-top: 1.3em;
+}
+
+p { margin: 0.7em 0; text-align: justify; }
+
+a { color: #b3341f; }
+
+/* Code */
+pre {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 0.9em 1em;
+  border-radius: 6px;
+  font-size: 9pt;
+  line-height: 1.45;
+  overflow-x: auto;
+  page-break-inside: avoid;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+code {
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+  background: #f0eeee;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 9.3pt;
+  color: #b3341f;
+}
+pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+/* Admonitions via blockquote convention */
+blockquote {
+  border-left: 4pt solid #f0a538;
+  background: #fff8ec;
+  margin: 1em 0;
+  padding: 0.6em 1em;
+  font-size: 10pt;
+  page-break-inside: avoid;
+}
+blockquote p { margin: 0.3em 0; }
+
+/* Exercise boxes */
+.exercise {
+  border: 1.5pt solid #2e7d32;
+  background: #f2f8f2;
+  border-radius: 6px;
+  padding: 0.8em 1.1em;
+  margin: 1.2em 0;
+  page-break-inside: avoid;
+  font-size: 10pt;
+}
+.exercise-title {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  color: #2e7d32;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 9pt;
+  margin-bottom: 0.4em;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 9.5pt;
+  margin: 1em 0;
+}
+th, td {
+  border: 1pt solid #ccc;
+  padding: 0.4em 0.6em;
+  text-align: left;
+}
+th {
+  background: #f0eeee;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+hr {
+  border: none;
+  border-top: 1pt solid #ddd;
+  margin: 2em 0;
+}
