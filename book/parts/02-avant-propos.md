@@ -46,7 +46,7 @@ swift chemin/vers/fichier.swift
 Ou créer un projet exécutable complet avec Swift Package Manager (détaillé au chapitre 1) :
 
 ```bash
-mkdir MonProjet && cd MonProjet
+mkdir MyProject && cd MyProject
 swift package init --type executable
 swift run
 ```
@@ -56,7 +56,7 @@ swift run
 - Le code Swift est toujours présenté dans des blocs colorés comme celui-ci :
 
 ```swift
-let message = "Bienvenue dans Swift"
+let message = "Welcome to Swift"
 print(message)
 ```
 

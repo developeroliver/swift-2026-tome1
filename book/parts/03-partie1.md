@@ -82,14 +82,14 @@ Sur macOS, **Xcode** reste l'environnement le plus complet : autocomplétion ava
 La tradition veut qu'on commence par afficher un message à l'écran :
 
 ```swift
-print("Bonjour, Swift !")
+print("Hello, Swift!")
 ```
 
 C'est un programme Swift complet et valide. Une seule ligne suffit — il n'y a pas de fonction `main()` obligatoire, pas de classe à déclarer, pas de point d'entrée à définir explicitement dans un simple fichier exécutable. C'est un choix délibéré de Swift pour rester accessible aux débutants tout en restant un langage sérieux pour les experts.
 
 <div class="exercise">
 <div class="exercise-title">Exercice 1.1</div>
-Installez Swift (toolchain officielle ou Xcode), vérifiez la version installée avec <code>swift --version</code>, puis créez un fichier <code>bonjour.swift</code> qui affiche votre prénom avec <code>print()</code>. Exécutez-le avec <code>swift bonjour.swift</code>.
+Installez Swift (toolchain officielle ou Xcode), vérifiez la version installée avec <code>swift --version</code>, puis créez un fichier <code>hello.swift</code> qui affiche votre prénom avec <code>print()</code>. Exécutez-le avec <code>swift hello.swift</code>.
 </div>
 
 ## 2. Syntaxe de base {#chap-2}
@@ -107,8 +107,8 @@ Swift propose trois formes de commentaires, ignorés par le compilateur :
 /// Commentaire de documentation (triple-slash)
 /// Décrit une fonction, un type, etc. Reconnu par Xcode
 /// pour générer une aide contextuelle (Quick Help).
-func direBonjour() {
-    print("Bonjour")
+func sayHello() {
+    print("Hello")
 }
 ```
 
@@ -135,9 +135,9 @@ Mais l'usage idiomatique (« Swifty ») est de ne jamais les utiliser en fin de 
 Un **bloc de code** est délimité par des accolades `{ }`. On en trouve dans les fonctions, les conditions, les boucles, les types :
 
 ```swift
-func exemple() {
+func example() {
     // ceci est un bloc de code
-    print("À l'intérieur du bloc")
+    print("Inside the block")
 }
 ```
 
@@ -148,20 +148,20 @@ func exemple() {
 Un identifiant est le nom que vous donnez à une variable, une fonction, un type... Les règles :
 
 - Il peut contenir des lettres, des chiffres, et le underscore `_`, mais ne peut pas **commencer** par un chiffre.
-- Swift autorise même les caractères Unicode dans les identifiants : `let café = "espresso"` est valide (à utiliser avec parcimonie).
+- Swift autorise même les caractères Unicode dans les identifiants : `let π = 3.14159` est parfaitement valide.
 - Les mots réservés du langage (`let`, `var`, `func`, `struct`...) ne peuvent pas être utilisés tels quels comme identifiants — sauf si on les entoure de backticks : `` let `class` = "exception" `` est légal mais fortement déconseillé.
 
 ### Conventions Swift
 
-Le langage a des conventions de nommage fortes, respectées par toute la communauté et par les API d'Apple elles-mêmes :
+Le langage a des conventions de nommage fortes, respectées par toute la communauté et par les API d'Apple elles-mêmes. **Ce livre les respecte du premier au dernier chapitre : tous les identifiants du code sont en anglais**, conformément à l'usage professionnel réel — seuls les commentaires et les textes affichés à l'utilisateur resteront en français lorsque c'est pertinent pédagogiquement.
 
 | Élément | Convention | Exemple |
 |---|---|---|
-| Variables, constantes, fonctions | `camelCase` | `let nombreDeJoueurs`, `func calculerScore()` |
-| Types (struct, class, enum, protocol) | `PascalCase` | `struct Utilisateur`, `enum Direction` |
-| Constantes globales | `camelCase` (pas de `UPPER_CASE`) | `let vitesseLumiere = 299_792_458` |
+| Variables, constantes, fonctions | `camelCase` | `let numberOfPlayers`, `func calculateScore()` |
+| Types (struct, class, enum, protocol) | `PascalCase` | `struct User`, `enum Direction` |
+| Constantes globales | `camelCase` (pas de `UPPER_CASE`) | `let speedOfLight = 299_792_458` |
 
-Ces conventions ne sont pas de simples préférences stylistiques : les respecter rend immédiatement votre code Swift lisible par n'importe quel autre développeur Swift, et c'est un prérequis pour le chapitre 68 (API Design Guidelines).
+Ces conventions ne sont pas de simples préférences stylistiques : les respecter rend immédiatement votre code Swift lisible par n'importe quel autre développeur Swift dans le monde, et c'est un prérequis pour le chapitre 68 (API Design Guidelines).
 
 ### `print()`
 
@@ -171,22 +171,22 @@ Ces conventions ne sont pas de simples préférences stylistiques : les respecte
 print("Swift")                          // Swift
 print("Swift", "2026")                  // Swift 2026 (séparés par un espace)
 print("Swift", "2026", separator: " - ") // Swift - 2026
-print("Pas de retour à la ligne", terminator: "")
-print(" — suite sur la même ligne")
+print("No newline here", terminator: "")
+print(" — continues on the same line")
 ```
 
 On peut interpoler des valeurs directement dans une chaîne avec `\( )` :
 
 ```swift
-let langage = "Swift"
-let annee = 2026
-print("\(langage) \(annee)")   // Swift 2026
-print("2 + 2 = \(2 + 2)")      // 2 + 2 = 4
+let language = "Swift"
+let year = 2026
+print("\(language) \(year)")   // Swift 2026
+print("2 + 2 = \(2 + 2)")       // 2 + 2 = 4
 ```
 
 L'interpolation de chaînes sera revue en détail au chapitre 4 avec le type `String`.
 
 <div class="exercise">
 <div class="exercise-title">Exercice 2.1</div>
-Écrivez un programme qui déclare deux constantes <code>prenom</code> et <code>age</code>, puis affiche une seule phrase les utilisant toutes les deux via l'interpolation de chaînes, par exemple : <code>"Olivier a 30 ans."</code>
+Écrivez un programme qui déclare deux constantes <code>name</code> et <code>age</code>, puis affiche une seule phrase les utilisant toutes les deux via l'interpolation de chaînes, par exemple : <code>"Olivier is 30 years old."</code>
 </div>

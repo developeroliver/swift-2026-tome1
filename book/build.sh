@@ -9,6 +9,7 @@ pandoc parts/*.md \
   --pdf-engine=weasyprint \
   --css=style.css \
   --metadata lang=fr \
+  --syntax-highlighting=breezedark \
   -f markdown+raw_html
 
 python3 - "$OUT" << 'PYEOF'

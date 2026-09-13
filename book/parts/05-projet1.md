@@ -41,32 +41,32 @@ On utilise un `repeat-while` (chapitre 7) : le bloc doit s'exécuter au moins un
 
 ```swift
 repeat {
-    print("\nTa proposition ? ", terminator: "")
+    print("\nYour guess? ", terminator: "")
 
-    guard let entree = readLine() else {
-        print("\nFin de la partie, à bientôt !")
+    guard let input = readLine() else {
+        print("\nEnd of game, see you soon!")
         break
     }
 
-    guard let proposition = Int(entree) else {
-        print("Ce n'est pas un nombre valide, réessaie.")
+    guard let guess = Int(input) else {
+        print("That's not a valid number, try again.")
         continue
     }
 
-    guard range.contains(proposition) else {
-        print("Reste entre \(range.lowerBound) et \(range.upperBound) !")
+    guard range.contains(guess) else {
+        print("Stay between \(range.lowerBound) and \(range.upperBound)!")
         continue
     }
 
     attempts += 1
 
-    switch proposition {
+    switch guess {
     case secretNumber:
         hasWon = true
     case ..<secretNumber:
-        print("📈 Plus grand !")
+        print("📈 Higher!")
     default:
-        print("📉 Plus petit !")
+        print("📉 Lower!")
     }
 } while !hasWon
 ```
@@ -79,20 +79,20 @@ Trois cas sont gérés explicitement, dans l'ordre :
 2. Le texte saisi n'est pas un nombre valide (`Int("...")` échoue) : on prévient le joueur et on continue avec `continue`, sans compter d'essai.
 3. Le nombre est hors de l'intervalle `1...100` : même traitement.
 
-> **Piège courant** — dans une première version de ce programme, on pourrait être tenté d'écrire `guard let entree = readLine(), let proposition = Int(entree) else { continue }` en une seule ligne pour les deux vérifications. Le problème : quand `readLine()` renvoie `nil` (fin de l'entrée), cette version relance `continue`, qui redemande une saisie... qui échouera à nouveau indéfiniment, dans une **boucle infinie**. Il faut bien distinguer « plus d'entrée du tout » (`break`, on arrête) de « entrée invalide » (`continue`, on redemande).
+> **Piège courant** — dans une première version de ce programme, on pourrait être tenté d'écrire `guard let input = readLine(), let guess = Int(input) else { continue }` en une seule ligne pour les deux vérifications. Le problème : quand `readLine()` renvoie `nil` (fin de l'entrée), cette version relance `continue`, qui redemande une saisie... qui échouera à nouveau indéfiniment, dans une **boucle infinie**. Il faut bien distinguer « plus d'entrée du tout » (`break`, on arrête) de « entrée invalide » (`continue`, on redemande).
 
-### Le mot secret et le `switch`
+### Le nombre secret et le `switch`
 
 Comparer la proposition au nombre secret avec un `switch` (chapitre 6) plutôt qu'une cascade de `if`/`else if` rend l'intention plus lisible, et réutilise le pattern matching sur les ranges (`case ..<secretNumber`) vu au chapitre 6 :
 
 ```swift
-switch proposition {
+switch guess {
 case secretNumber:
     hasWon = true
 case ..<secretNumber:
-    print("📈 Plus grand !")
+    print("📈 Higher!")
 default:
-    print("📉 Plus petit !")
+    print("📉 Lower!")
 }
 ```
 
@@ -100,12 +100,12 @@ default:
 
 ```swift
 if hasWon {
-    let essaiMot = attempts > 1 ? "essais" : "essai"
-    print("\n🎉 Bravo ! Le nombre était bien \(secretNumber). Trouvé en \(attempts) \(essaiMot).")
+    let attemptWord = attempts > 1 ? "attempts" : "attempt"
+    print("\n🎉 Well done! The number was indeed \(secretNumber). Found in \(attempts) \(attemptWord).")
 }
 ```
 
-L'opérateur ternaire (chapitre 5) gère élégamment l'accord singulier/pluriel de « essai ».
+L'opérateur ternaire (chapitre 5) gère élégamment l'accord singulier/pluriel de « attempt ».
 
 ### Tester le programme
 

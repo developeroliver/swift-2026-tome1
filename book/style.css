@@ -243,8 +243,8 @@ a { color: #b3341f; }
 
 /* Code */
 pre {
-  background: #1e1e1e;
-  color: #d4d4d4;
+  background: #232629;
+  color: #cfcfc2;
   padding: 0.9em 1em;
   border-radius: 6px;
   font-size: 9pt;
@@ -253,6 +253,7 @@ pre {
   page-break-inside: avoid;
   font-family: "SF Mono", Menlo, Consolas, monospace;
 }
+pre code span { background: none; }
 code {
   font-family: "SF Mono", Menlo, Consolas, monospace;
   background: #f0eeee;

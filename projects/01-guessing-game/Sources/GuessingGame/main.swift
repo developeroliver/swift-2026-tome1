@@ -5,40 +5,40 @@ let secretNumber = Int.random(in: range)
 var attempts = 0
 var hasWon = false
 
-print("🎯 Jeu de devinettes")
-print("Je pense à un nombre entre \(range.lowerBound) et \(range.upperBound). À toi de le trouver !")
+print("🎯 Guessing Game")
+print("I'm thinking of a number between \(range.lowerBound) and \(range.upperBound). Try to guess it!")
 
 repeat {
-    print("\nTa proposition ? ", terminator: "")
+    print("\nYour guess? ", terminator: "")
 
-    guard let entree = readLine() else {
-        print("\nFin de la partie, à bientôt !")
+    guard let input = readLine() else {
+        print("\nEnd of game, see you soon!")
         break
     }
 
-    guard let proposition = Int(entree) else {
-        print("Ce n'est pas un nombre valide, réessaie.")
+    guard let guess = Int(input) else {
+        print("That's not a valid number, try again.")
         continue
     }
 
-    guard range.contains(proposition) else {
-        print("Reste entre \(range.lowerBound) et \(range.upperBound) !")
+    guard range.contains(guess) else {
+        print("Stay between \(range.lowerBound) and \(range.upperBound)!")
         continue
     }
 
     attempts += 1
 
-    switch proposition {
+    switch guess {
     case secretNumber:
         hasWon = true
     case ..<secretNumber:
-        print("📈 Plus grand !")
+        print("📈 Higher!")
     default:
-        print("📉 Plus petit !")
+        print("📉 Lower!")
     }
 } while !hasWon
 
 if hasWon {
-    let essaiMot = attempts > 1 ? "essais" : "essai"
-    print("\n🎉 Bravo ! Le nombre était bien \(secretNumber). Trouvé en \(attempts) \(essaiMot).")
+    let attemptWord = attempts > 1 ? "attempts" : "attempt"
+    print("\n🎉 Well done! The number was indeed \(secretNumber). Found in \(attempts) \(attemptWord).")
 }
