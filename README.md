@@ -13,8 +13,7 @@ book/               Sources Markdown du livre + pipeline de génération PDF
   parts/            Un fichier par section (couverture, TOC, chapitres...)
   style.css         Mise en page du PDF (pandoc + weasyprint)
   build.sh          Génère Swift-2026-Tome1.pdf à partir de parts/*.md
-code/                Extraits de code runnables, un dossier par partie du livre
-projects/            Les 8 projets du livre (Swift Package Manager), code complet
+projects/            Les 8 projets du livre (Swift Package Manager), code complet et testé
 ```
 
 ## Générer le PDF
@@ -41,4 +40,6 @@ Nécessite `pandoc` et `weasyprint` (`brew install pandoc weasyprint`).
 
 ## Statut
 
-🚧 En cours de rédaction — voir [book/TABLE_DES_MATIERES.md](book/TABLE_DES_MATIERES.md) pour le plan complet.
+✅ Tome 1 complet — 20 parties, 70 chapitres, 8 projets, 4 annexes (215 pages). Voir [book/TABLE_DES_MATIERES.md](book/TABLE_DES_MATIERES.md) pour le plan détaillé.
+
+Chaque exemple de code du livre a été compilé et exécuté avant intégration, et chaque projet a été testé manuellement sur ses cas limites (persistance, entrées invalides, fin d'entrée standard, vraies requêtes réseau).
